@@ -1,0 +1,27 @@
+{% extends "common/base.njk" %}
+{% from "common/input.njk" import input %}
+{% from "common/radio.njk" import radio %}
+{% from "common/select.njk" import select %}
+{% from "common/button.njk" import button %}
+
+{% block content %}
+    <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-l">Some Useful Government Service</h1>
+                    {% if error %}
+                        <p class="govuk-body">{{ error }}</p>
+                    {% endif %}
+                    <form id="form-tracking" action="/" method="post" novalidate>
+                        {{ input('Name', '') }}
+                        {{ radio('Sex', '') }}
+                        {{ input('Age', '') }}
+                        {{ select('Country', list) }}
+                        {{ button('Apply') }}
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+{% endblock %}

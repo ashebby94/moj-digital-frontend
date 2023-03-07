@@ -1,0 +1,15 @@
+{% macro select(label, list) %}
+<div class="govuk-form-group">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+            {{ label }}
+        </h1>
+    </legend>
+    <select class="govuk-select" id="sort" name="sort">
+        <option value="">Chose a country</option>
+        {% for country in list %}
+            <option value="{{ country }}">{{ country }}</option>
+        {% endfor %}
+    </select>
+</div>
+{% endmacro %}

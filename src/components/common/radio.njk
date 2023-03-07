@@ -1,0 +1,25 @@
+{% macro radio(label, value='') %}
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+                {{ label }}
+            </h1>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="male" name="{{ label.toLowerCase() }}" type="radio" value="male">
+                <label class="govuk-label govuk-radios__label" for="{{ label }}">
+                    Male
+                </label>
+            </div>
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="female" name="{{ label.toLowerCase() }}" type="radio" value="female">
+                <label class="govuk-label govuk-radios__label" for="{{ label + '-2' }}">
+                    Female
+                </label>
+            </div>
+        </div>
+    </fieldset>
+</div>
+{% endmacro %}

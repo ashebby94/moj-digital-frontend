@@ -1,0 +1,14 @@
+{% macro input(label, value='') %}
+    <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="event-name">
+                {{ label }}
+            </label>
+        </h1>
+        <input class="govuk-input govuk-input--width-10"
+               id="{{ label.toLowerCase() }}"
+               name="{{ label.toLowerCase() }}"
+               type="text"
+               value="{{ value }}">
+    </div>
+{% endmacro %}
